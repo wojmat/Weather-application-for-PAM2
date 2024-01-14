@@ -39,6 +39,22 @@
 
             </TextView>
 
+            <EditText
+                android:id="@+id/cityInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="Enter City"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/btnFetchWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Get Weather" />
+
 
         </LinearLayout>
         <LinearLayout
@@ -67,6 +83,7 @@
                 android:layout_height="wrap_content">
 
             </TextView>
+
             <LinearLayout
                 android:orientation="horizontal"
                 android:gravity="center"
@@ -97,10 +114,12 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/weatherInfoContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="3">
+<!--            android:layout_below="@id/overviewContainer">-->
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -248,6 +267,10 @@
             android:layout_width="wrap_content"
             android:layout_height="10dp">
         </Space>
+
+        <!-- Button to Fetch Weather -->
+
+
         <LinearLayout
             android:id="@+id/detailsContainer"
             android:orientation="vertical"

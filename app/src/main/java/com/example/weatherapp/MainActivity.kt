@@ -1,5 +1,6 @@
 package com.example.weatherapp
 
+import WeatherApiService
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -14,24 +15,28 @@ import android.util.Log
 // This is the main activity class for the application, extending AppCompatActivity.
 class MainActivity : AppCompatActivity() {
 
-    // These are private constants for the city and API key used for weather data requests. This is likely to be changed as we consider using an edit text in layout and search for a city.
-    private val city = "london,gb"
-    private val api = "69099485ea4553bae8fc0e52841ce693"
+    private val apiService = WeatherApiService("69099485ea4553bae8fc0e52841ce693")
 
-    // This is the onCreate method, which is called when the activity is created.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // This line would set the content view to the layout defined in activity_main.xml (currently commented out). Now we focus on testing the API calls.
         setContentView(R.layout.activity_main)
-        fetchWeatherData(city)
+
+        val btnFetchWeather = findViewById<Button>(R.id.btnFetchWeather)
+        btnFetchWeather.setOnClickListener {
+            val cityInput = findViewById<EditText>(R.id.cityInput).text.toString()
+            if (cityInput.isNotEmpty()) {
+                fetchWeatherData(cityInput)
+            } else {
+                Toast.makeText(this, "Please enter a city name", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     // This function initiates a coroutine to fetch weather data asynchronously.
     private fun fetchWeatherData(city: String) {
         // Launching a coroutine on the IO dispatcher for network operations.
         CoroutineScope(Dispatchers.IO).launch {
-            // Asynchronously getting the weather data and waiting for the result.
-            val data = async { getWeatherData(city) }.await()
+            val data = async { apiService.getWeatherData(city) }.await()
             // If data is not null, update the UI with the received data.
             if (data != null) {
                 updateUI(data)
@@ -42,21 +47,6 @@ class MainActivity : AppCompatActivity() {
                 Log.e("API_ERROR", "No data received from API")
 
             }
-        }
-    }
-
-    // This function makes a network request to get weather data.
-    private fun getWeatherData(city: String): String? {
-        return try {
-            // Building the URL with the city and API key, and reading the response as a String.
-            val response = URL("https://api.openweathermap.org/data/2.5/weather?q=$city&units=metric&appid=$api").readText(Charsets.UTF_8)
-            // Logging the API response for debugging.
-            Log.d("API_CALL", "API response: $response")
-            response
-        } catch (e: Exception) {
-            // Logging an error if the API call fails.
-            Log.e("API_CALL", "API call failed: ${e.message}")
-            null
         }
     }
 
