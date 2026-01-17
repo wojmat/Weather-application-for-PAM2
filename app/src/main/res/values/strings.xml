@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="location_label">Location</string>
+    <string name="updated_at_label">Updated at</string>
+    <string name="city_hint">Enter City</string>
+    <string name="get_weather">Get Weather</string>
+    <string name="status_clear_sky">Clear Sky</string>
+    <string name="temperature_default">24°C</string>
+    <string name="temperature_min_label">Min temp</string>
+    <string name="temperature_max_label">Max Temp</string>
+    <string name="time_placeholder">--:--</string>
+    <string name="stat_placeholder">--</string>
+    <string name="sunrise_label">Sunrise</string>
+    <string name="sunset_label">Sunset</string>
+    <string name="wind_label">Wind</string>
+    <string name="pressure_label">Pressure</string>
+    <string name="humidity_label">Humidity</string>
+    <string name="created_by_label">Created by</string>
+    <string name="created_by_names">Mateusz and Miłosz</string>
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_enter_city">Please enter a city name</string>
+    <string name="error_fetch_weather">Unable to fetch weather data. Please try again.</string>
+    <string name="error_parse_weather">Unable to read weather data. Please try again.</string>
+    <string name="updated_at">Updated at: %s</string>
+    <string name="location_format">%1$s, %2$s</string>
+    <string name="temperature_celsius">%s°C</string>
+    <string name="temperature_min">Min Temp: %s°C</string>
+    <string name="temperature_max">Max Temp: %s°C</string>
 </resources>

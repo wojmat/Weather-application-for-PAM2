@@ -24,7 +24,7 @@
             <TextView
                 android:id="@+id/address"
                 android:textSize="24sp"
-                android:text="Location"
+                android:text="@string/location_label"
                 android:paddingTop="80dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -33,7 +33,7 @@
             <TextView
                 android:id="@+id/updated_at"
                 android:textSize="14sp"
-                android:text="Updated at"
+                android:text="@string/updated_at_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:hint="Enter City"
+                android:hint="@string/city_hint"
                 android:inputType="text" />
 
             <Button
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Get Weather" />
+                android:text="@string/get_weather" />
 
 
         </LinearLayout>
@@ -68,7 +68,7 @@
                 android:id="@+id/status"
                 android:textSize="18sp"
                 android:layout_gravity="center"
-                android:text="Clear Sky"
+                android:text="@string/status_clear_sky"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -78,7 +78,7 @@
                 android:textSize="90sp"
                 android:fontFamily="sans-serif-thin"
                 android:layout_gravity="center"
-                android:text="24°C"
+                android:text="@string/temperature_default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -92,7 +92,7 @@
 
                 <TextView
                     android:id="@+id/temp_min"
-                    android:text="Min temp"
+                    android:text="@string/temperature_min_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
@@ -104,7 +104,7 @@
                 </Space>
                 <TextView
                     android:id="@+id/temp_max"
-                    android:text="Max Temp"
+                    android:text="@string/temperature_max_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
@@ -147,7 +147,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunrise"
+                    android:text="@string/sunrise_label"
                     android:textSize="12sp">
 
                 </TextView>
@@ -156,7 +156,7 @@
                     android:id="@+id/sunrise"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5:30am"
+                    android:text="@string/time_placeholder"
                     android:textSize="14sp">
 
                 </TextView>
@@ -194,7 +194,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunset"
+                    android:text="@string/sunset_label"
                     android:textSize="12sp">
 
                 </TextView>
@@ -203,7 +203,7 @@
                     android:id="@+id/sunset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5:30am"
+                    android:text="@string/time_placeholder"
                     android:textSize="14sp">
 
                 </TextView>
@@ -241,7 +241,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wind"
+                    android:text="@string/wind_label"
                     android:textSize="12sp">
 
                 </TextView>
@@ -250,7 +250,7 @@
                     android:id="@+id/wind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5:30am"
+                    android:text="@string/stat_placeholder"
                     android:textSize="14sp">
 
                 </TextView>
@@ -304,7 +304,7 @@
                     </Space>
                     <TextView
                         android:textSize="12sp"
-                        android:text="Pressure"
+                        android:text="@string/pressure_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
@@ -312,7 +312,7 @@
                     <TextView
                         android:id="@+id/pressure"
                         android:textSize="14sp"
-                        android:text="5:30am"
+                        android:text="@string/stat_placeholder"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
@@ -345,7 +345,7 @@
                     </Space>
                     <TextView
                         android:textSize="12sp"
-                        android:text="Humidity"
+                        android:text="@string/humidity_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
@@ -353,7 +353,7 @@
                     <TextView
                         android:id="@+id/humidity"
                         android:textSize="14sp"
-                        android:text="5:30am"
+                        android:text="@string/stat_placeholder"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
@@ -386,7 +386,7 @@
                 </Space>
                 <TextView
                     android:textSize="12sp"
-                    android:text="Created by"
+                    android:text="@string/created_by_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
@@ -394,7 +394,7 @@
                 <TextView
                     android:id="@+id/info"
                     android:textSize="10sp"
-                    android:text="Mateusz and Miłosz"
+                    android:text="@string/created_by_names"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
@@ -422,7 +422,7 @@
     <TextView
         android:id="@+id/errorText"
         android:layout_centerInParent="true"
-        android:text="Something went wrong"
+        android:text="@string/error_generic"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
